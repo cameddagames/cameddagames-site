@@ -36,14 +36,11 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const gearButton = document.querySelector('.gear-button');
-      const menu = document.querySelector('.language-menu');
-      
-      gearButton.addEventListener('click', function () {
-        menu.classList.toggle('hidden');
-      });
-    });
+    // Function to toggle the visibility of the language menu
+    function toggleLanguageMenu() {
+      var menu = document.getElementById("language-menu");
+      menu.classList.toggle("hidden");  // Toggles the "hidden" class to show/hide the menu
+    }
   </script>
 </body> 
 </html>
