@@ -38,3 +38,9 @@
 .hidden {
   display: none;
 }
+/* Sezione per le immagini */
+.logo {
+  height: 30px;
+  max-width: 100px;
+  object-fit: contain;
+}
