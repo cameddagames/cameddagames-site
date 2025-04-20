@@ -62,5 +62,11 @@
       document.getElementById("language-menu").classList.toggle("hidden");
     }
   </script>
+<script>
+  document.querySelector('.gear-button').addEventListener('click', function () {
+    const menu = document.querySelector('.language-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
