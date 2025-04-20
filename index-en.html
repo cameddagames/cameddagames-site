@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cameddagames</title>
+  <!-- Icona ingranaggio -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Language switcher -->
+  <div class="language-switcher">
+    <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="index-en.html">English</a>
+      <a href="index.html">Italiano</a>
+    </div>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="Cameddagames Logo" class="logo">
+    <nav>
+      <a href="index-en.html">Home</a>
+      <a href="giochi-en.html">My Games</a>
+      <a href="chi-sono-en.html">About Me</a>
+      <a href="novita-en.html">News</a>
+      <a href="contatti-en.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Cameddagames!</h1>
+    <p>Discover my original video game ideas, upcoming news, and the person behind these extraordinary concepts.</p>
+  </main>
+
+  <footer>
+    © 2025 Cameddagames – All rights reserved
+  </footer>
+
+  <!-- Script per il language switcher -->
+  <script>
+    function toggleLanguageMenu() {
+      document.getElementById("language-menu").classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
