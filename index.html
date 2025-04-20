@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- R O T E L L I N A  -->
   <div class="language-switcher">
-  <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
-  <div id="language-menu" class="language-menu hidden">
-    <a href="index.html">Italiano</a>
-    <a href="index-en.html">English</a>
+    <button class="gear-button">&#9881;</button>
+    <div class="language-menu hidden">
+      <a href="index.html">IT</a>
+      <a href="index-en.html">EN</a>
+    </div>
   </div>
-  </div>
+
+  <!-- H E A D E R -->
   <header>
     <img src="logo.png" alt="Logo Cameddagames" class="logo">
     <nav>
@@ -24,38 +28,28 @@
       <a href="contatti.html">Contattami</a>
     </nav>
   </header>
-  <!-- Posizionamento fisso della rotellina -->
-<div class="language-switcher">
-  <button class="gear-button">&#9881;</button>
-  <div class="language-menu hidden">
-    <a href="index.html">IT</a>
-    <a href="index_en.html">EN</a>
-  </div>
-</div>
 
-
+  <!-- M A I N -->
   <main>
     <h1>Benvenuto su Cameddagames!</h1>
     <p>Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
   </main>
 
+  <!-- F O O T E R -->
   <footer>
     © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
-<script>
-  function toggleLanguageMenu() {
-    document.getElementById("language-menu").classList.toggle("hidden");
-  }
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const gearButton = document.querySelector('.gear-button');
-    const menu = document.querySelector('.language-menu');
 
-    gearButton.addEventListener('click', function () {
-      menu.classList.toggle('hidden');
+  <!-- J A V A S C R I P T -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const gearButton = document.querySelector('.gear-button');
+      const menu = document.querySelector('.language-menu');
+
+      gearButton.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
     });
-  });
-</script>
-</body> 
+  </script>
+</body>
 </html>
