@@ -42,11 +42,13 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
+
+/* Posizionamento della rotellina e del menu */
 .language-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 999;
+  position: fixed;  /* Posizionamento fisso */
+  top: 20px;        /* Distanza dal top */
+  right: 20px;      /* Distanza dalla destra */
+  z-index: 999;     /* Assicurati che la rotellina sia sopra agli altri elementi */
 }
 
 .gear-button {
@@ -57,15 +59,15 @@ footer {
 }
 
 .language-menu {
-  display: flex;
-  flex-direction: column;
+  display: none;  /* Nascondi il menu di default */
+  position: absolute;
+  top: 40px;  /* Distanza rispetto alla rotellina */
+  right: 0;
   background-color: #f3f3f3;
   border: 1px solid #ccc;
   padding: 10px;
-  position: absolute;
-  top: 40px;
-  right: 0;
   border-radius: 8px;
+  z-index: 1000;  /* Mantieni il menu sopra altri contenuti */
 }
 
 .language-menu a {
@@ -80,5 +82,5 @@ footer {
 }
 
 .hidden {
-  display: none;
+  display: none; /* Nasconde il menu */
 }
