@@ -7,40 +7,70 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Icona della rotellina per cambiare lingua -->
   <div class="language-switcher">
     <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
     <div id="language-menu" class="language-menu hidden">
-      <a href="index.html">Italiano</a>
-      <a href="index-en.html">English</a>
+      <a href="javascript:void(0);" onclick="changeLanguage('it')">Italiano</a>
+      <a href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
     </div>
   </div>
 
   <header>
     <img src="logo.png" alt="Logo Cameddagames" class="logo">
     <nav>
-      <a href="index.html">Home</a>
-      <a href="giochi.html">I miei giochi</a>
-      <a href="chi-sono.html">Chi sono</a>
-      <a href="novita.html">Novità</a>
-      <a href="contatti.html">Contattami</a>
+      <a href="index.html" class="home-link">Home</a>
+      <a href="giochi.html" class="games-link">I miei giochi</a>
+      <a href="chi-sono.html" class="about-link">Chi sono</a>
+      <a href="novita.html" class="news-link">Novità</a>
+      <a href="contatti.html" class="contact-link">Contattami</a>
     </nav>
   </header>
 
   <main>
-    <h1>Benvenuto su Cameddagames!</h1>
-    <p>Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
+    <h1 id="main-title">Benvenuto su Cameddagames!</h1>
+    <p id="main-description">Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
   </main>
 
   <footer>
-    © 2025 Cameddagames – Tutti i diritti riservati
+    <p id="footer-text">© 2025 Cameddagames – Tutti i diritti riservati</p>
   </footer>
 
-  <script>
-    // Funzione per mostrare e nascondere il menu della lingua
-    function toggleLanguageMenu() {
-      var menu = document.getElementById("language-menu");
-      menu.classList.toggle("hidden");  // Toglie o aggiunge la classe "hidden"
-    }
-  </script>
-</body> 
+  <script src="script.js"></script>
+</body>
 </html>
+// Funzione per mostrare/nascondere il menu delle lingue
+function toggleLanguageMenu() {
+  var menu = document.getElementById("language-menu");
+  menu.classList.toggle("hidden");
+}
+
+// Funzione per cambiare la lingua
+function changeLanguage(lang) {
+  if (lang === 'it') {
+    document.getElementById("main-title").innerText = "Benvenuto su Cameddagames!";
+    document.getElementById("main-description").innerText = "Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.";
+    document.getElementById("footer-text").innerText = "© 2025 Cameddagames – Tutti i diritti riservati";
+    
+    // Modifica il contenuto del menu di navigazione
+    document.querySelector(".home-link").innerText = "Home";
+    document.querySelector(".games-link").innerText = "I miei giochi";
+    document.querySelector(".about-link").innerText = "Chi sono";
+    document.querySelector(".news-link").innerText = "Novità";
+    document.querySelector(".contact-link").innerText = "Contattami";
+  } else if (lang === 'en') {
+    document.getElementById("main-title").innerText = "Welcome to Cameddagames!";
+    document.getElementById("main-description").innerText = "Discover my original video games, upcoming news, and who is behind these amazing ideas.";
+    document.getElementById("footer-text").innerText = "© 2025 Cameddagames – All rights reserved";
+    
+    // Modifica il contenuto del menu di navigazione
+    document.querySelector(".home-link").innerText = "Home";
+    document.querySelector(".games-link").innerText = "My Games";
+    document.querySelector(".about-link").innerText = "About Me";
+    document.querySelector(".news-link").innerText = "News";
+    document.querySelector(".contact-link").innerText = "Contact Me";
+  }
+
+  // Chiudi il menu delle lingue dopo aver selezionato una lingua
+  toggleLanguageMenu();
+}
