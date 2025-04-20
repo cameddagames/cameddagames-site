@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Cameddagames</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>Contact Me – Cameddagames</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a href="index-en.html"><img src="logo.png" alt="Logo" class="logo" /></a>
-    <nav>
-      <ul>
-        <li><a href="index-en.html">Home</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Contact</h1>
-    <p>If you want to get in touch, send an email to: <strong>cameddagames@gmail.com</strong></p>
-  </main>
+  <div id="language-switcher">
+    <button class="gear-button" onclick="toggleLanguageMenu()">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="contatti.html">🇮🇹 Italiano</a>
+      <a href="contatti-en.html">🇬🇧 English</a>
+    </div>
+  </div>
+
+  <h1>Contact Me</h1>
+  <p>If you want to collaborate or send feedback, you can write me at: <strong>cameddagames@gmail.com</strong></p>
+
+  <script>
+    function toggleLanguageMenu() {
+      document.getElementById("language-menu").classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
+
