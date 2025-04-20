@@ -39,38 +39,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-// Funzione per mostrare/nascondere il menu delle lingue
-function toggleLanguageMenu() {
-  var menu = document.getElementById("language-menu");
-  menu.classList.toggle("hidden");
-}
-
-// Funzione per cambiare la lingua
-function changeLanguage(lang) {
-  if (lang === 'it') {
-    document.getElementById("main-title").innerText = "Benvenuto su Cameddagames!";
-    document.getElementById("main-description").innerText = "Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.";
-    document.getElementById("footer-text").innerText = "© 2025 Cameddagames – Tutti i diritti riservati";
-    
-    // Modifica il contenuto del menu di navigazione
-    document.querySelector(".home-link").innerText = "Home";
-    document.querySelector(".games-link").innerText = "I miei giochi";
-    document.querySelector(".about-link").innerText = "Chi sono";
-    document.querySelector(".news-link").innerText = "Novità";
-    document.querySelector(".contact-link").innerText = "Contattami";
-  } else if (lang === 'en') {
-    document.getElementById("main-title").innerText = "Welcome to Cameddagames!";
-    document.getElementById("main-description").innerText = "Discover my original video games, upcoming news, and who is behind these amazing ideas.";
-    document.getElementById("footer-text").innerText = "© 2025 Cameddagames – All rights reserved";
-    
-    // Modifica il contenuto del menu di navigazione
-    document.querySelector(".home-link").innerText = "Home";
-    document.querySelector(".games-link").innerText = "My Games";
-    document.querySelector(".about-link").innerText = "About Me";
-    document.querySelector(".news-link").innerText = "News";
-    document.querySelector(".contact-link").innerText = "Contact Me";
-  }
-
-  // Chiudi il menu delle lingue dopo aver selezionato una lingua
-  toggleLanguageMenu();
-}
