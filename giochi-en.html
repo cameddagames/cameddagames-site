@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Games - Cameddagames</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>My Games – Cameddagames</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a href="index-en.html"><img src="logo.png" alt="Logo" class="logo" /></a>
-    <nav>
-      <ul>
-        <li><a href="index-en.html">Home</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>My Games</h1>
-    <p>Here you can discover the video game projects I’ve created and imagined!</p>
-    <!-- Add your games here -->
-  </main>
+  <div id="language-switcher">
+    <button class="gear-button" onclick="toggleLanguageMenu()">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="giochi.html">🇮🇹 Italiano</a>
+      <a href="giochi-en.html">🇬🇧 English</a>
+    </div>
+  </div>
+
+  <h1>My Videogames</h1>
+
+  <section>
+    <h2>La vita di un ladro magnifico</h2>
+    <p>A thrilling game inspired by Lupin, where clever heists and brilliant disguises are at the heart of every mission.</p>
+  </section>
+
+  <section>
+    <h2>Urban Shadow</h2>
+    <p>An open-world action adventure where you play as a powerful vigilante fighting crime in a dynamic city.</p>
+  </section>
+
+  <section>
+    <h2>Paradise Hunter</h2>
+    <p>A mysterious survival and exploration game set on a remote island filled with secrets and challenges.</p>
+  </section>
+
+  <script>
+    function toggleLanguageMenu() {
+      document.getElementById("language-menu").classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
