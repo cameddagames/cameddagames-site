@@ -1,4 +1,3 @@
-/* Stile generale */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -17,9 +16,7 @@ header {
 }
 
 .logo {
-  max-width: 150px;    /* Imposta una larghezza massima per il logo */
-  height: auto;        /* Mantiene le proporzioni del logo */
-  object-fit: contain; /* Impedisce che il logo venga distorto */
+  height: 50px;
 }
 
 nav a {
@@ -46,12 +43,11 @@ footer {
   margin-top: 3rem;
 }
 
-/* Stile per il selettore di lingua */
 .language-switcher {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 9999;  /* Assicura che la rotellina sia sopra gli altri elementi */
+  z-index: 999;
 }
 
 .gear-button {
