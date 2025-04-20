@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me - Cameddagames</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>About Me – Cameddagames</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a href="index-en.html"><img src="logo.png" alt="Logo" class="logo" /></a>
-    <nav>
-      <ul>
-        <li><a href="index-en.html">Home</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>About Me</h1>
-    <p>My name is Niccolò Camedda, I’m 14 years old and I created this site to share my game ideas and projects with the world. I love creating, dreaming, and transforming ideas into reality!</p>
-  </main>
+  <div id="language-switcher">
+    <button class="gear-button" onclick="toggleLanguageMenu()">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="chi-sono.html">🇮🇹 Italiano</a>
+      <a href="chi-sono-en.html">🇬🇧 English</a>
+    </div>
+  </div>
+
+  <h1>About Me</h1>
+  <p>My name is Niccolò Camedda, I’m 14 years old and I’m passionate about video games and creative ideas. I created Cameddagames to share my dream of becoming a game developer.</p>
+
+  <script>
+    function toggleLanguageMenu() {
+      document.getElementById("language-menu").classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
