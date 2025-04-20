@@ -48,9 +48,13 @@
   }
 </script>
 <script>
-  document.querySelector('.gear-button').addEventListener('click', function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const gearButton = document.querySelector('.gear-button');
     const menu = document.querySelector('.language-menu');
-    menu.classList.toggle('hidden');
+
+    gearButton.addEventListener('click', function () {
+      menu.classList.toggle('hidden');
+    });
   });
 </script>
 </body> 
