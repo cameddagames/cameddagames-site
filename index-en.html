@@ -7,49 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- L A N G U A G E   S W I T C H -->
   <div class="language-switcher">
-    <button class="gear-button">&#9881;</button>
-    <div class="language-menu hidden">
-      <a href="index.html">IT</a>
-      <a href="index-en.html">EN</a>
+    <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="index.html">Italian</a>
+      <a href="index-en.html">English</a>
     </div>
   </div>
 
-  <!-- H E A D E R -->
   <header>
     <img src="logo.png" alt="Cameddagames Logo" class="logo">
     <nav>
       <a href="index-en.html">Home</a>
-      <a href="giochi-en.html">My Games</a>
-      <a href="chi-sono-en.html">About Me</a>
-      <a href="novita-en.html">News</a>
-      <a href="contatti-en.html">Contact Me</a>
+      <a href="giochi.html">My Games</a>
+      <a href="chi-sono.html">About Me</a>
+      <a href="novita.html">News</a>
+      <a href="contatti.html">Contact Me</a>
     </nav>
   </header>
 
-  <!-- M A I N -->
   <main>
     <h1>Welcome to Cameddagames!</h1>
-    <p>Discover my original video games, upcoming news, and who's behind these amazing ideas.</p>
+    <p>Discover my original video games, upcoming news, and who is behind these amazing ideas.</p>
   </main>
 
-  <!-- F O O T E R -->
   <footer>
     © 2025 Cameddagames – All rights reserved
   </footer>
 
-  <!-- J A V A S C R I P T -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const gearButton = document.querySelector('.gear-button');
       const menu = document.querySelector('.language-menu');
-
+      
       gearButton.addEventListener('click', function () {
         menu.classList.toggle('hidden');
       });
     });
   </script>
-</body>
+</body> 
 </html>
