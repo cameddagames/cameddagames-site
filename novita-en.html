@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>News – Cameddagames</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Logo -->
   <img src="logo.png" alt="Cameddagames Logo" class="logo">
 
-  <!-- Language switcher -->
   <div id="language-switcher">
     <button id="gear-button" class="gear-button">⚙️</button>
     <div id="language-menu" class="language-menu hidden">
-      <a href="novita.html">Italiano 🇮🇹</a>
       <a href="novita-en.html">English 🇬🇧</a>
+      <a href="novita.html">Italiano 🇮🇹</a>
     </div>
   </div>
 
-  <!-- Header & navigation -->
+  <div id="more-switcher">
+    <button id="more-button" class="gear-button">⋮</button>
+    <div id="more-menu" class="language-menu hidden">
+      <a href="#" id="show-news">Show News</a>
+      <a href="#">Option 2</a>
+      <a href="#">Option 3</a>
+    </div>
+  </div>
+
   <header>
     <nav>
       <a href="index-en.html">Home</a>
@@ -31,22 +37,24 @@
     </nav>
   </header>
 
-  <!-- Main content -->
   <main>
     <h1>Latest News</h1>
     <p>Welcome to the Cameddagames news section. Here you’ll find updates on upcoming projects, announcements, and more!</p>
   </main>
 
-  <!-- Footer -->
+  <section id="gaming-news" class="hidden">
+    <h2>Latest Gaming News</h2>
+    <ul id="news-list"><li>Loading news…</li></ul>
+  </section>
+
   <footer>
-    © 2025 Cameddagames – All rights reserved
+    © 2025 Cameddagames – All rights reserved
   </footer>
 
-  <!-- Script for language‑switcher -->
   <script>
-    document.getElementById('gear-button').addEventListener('click', () => {
-      document.getElementById('language-menu').classList.toggle('hidden');
-    });
+    document.getElementById('gear-button').addEventListener('click', ()=>{document.getElementById('language-menu').classList.toggle('hidden');});
+    document.getElementById('more-button').addEventListener('click', ()=>{document.getElementById('more-menu').classList.toggle('hidden');});
+    document.getElementById('show-news').addEventListener('click', e=>{e.preventDefault();const n=document.getElementById('gaming-news');n.classList.toggle('hidden');if(!n.dataset.loaded){document.getElementById('news-list').innerHTML=`<li><a href="https://www.ign.com/articles/latest" target="_blank">Latest from IGN</a></li><li><a href="https://www.eurogamer.net/" target="_blank">Stories from Eurogamer</a></li><li><a href="https://www.gamefactor.com/" target="_blank">Updates on GameFactor</a></li>`;n.dataset.loaded="true";}document.getElementById('more-menu').classList.add('hidden');});
   </script>
 </body>
 </html>
