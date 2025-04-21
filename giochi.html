@@ -2,64 +2,59 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>I miei giochi – Cameddagames</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="language-switcher">
-  <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
-  <div id="language-menu" class="language-menu hidden">
-    <a href="index.html">Italiano</a>
-    <a href="index-en.html">English</a>
+
+  <img src="logo.png" alt="Cameddagames Logo" class="logo">
+
+  <div id="language-switcher">
+    <button id="gear-button" class="gear-button">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="index.html">Italiano 🇮🇹</a>
+      <a href="index-en.html">English 🇬🇧</a>
+    </div>
   </div>
-</div>
-<header>
-    <img src="logo.png" alt="Logo Cameddagames" class="logo">
+
+  <header>
     <nav>
       <a href="index.html">Home</a>
       <a href="giochi.html">I miei giochi</a>
-      <a href="chi-sono.html">Chi sono</a>
       <a href="novita.html">Novità</a>
+      <a href="chi-sono.html">Chi sono</a>
       <a href="contatti.html">Contattami</a>
     </nav>
   </header>
 
   <main>
     <h1>I miei giochi</h1>
-    <h2>La vita di un ladro magnifico</h2>
-    <p>Un'avventura ispirata a Lupin, dove ogni colpo è un'opera d'arte. Ambientazioni suggestive, colpi di scena e un gameplay realistico ti faranno vivere la vita di un genio del crimine.</p>
 
-    <h2>Urban Shadow</h2>
-    <p>Un vigilante oscuro con poteri straordinari sfreccia tra i tetti della città. Open-world dinamico, combattimenti acrobatici e una storia intensa: sei l'ombra che protegge.</p>
+    <section>
+      <h2>La vita di un ladro magnifico</h2>
+      <p>Un'avventura ispirata a Lupin, con pianificazione di colpi geniali, ambientazioni suggestive e gameplay realistico.</p>
+    </section>
 
-    <h2>Paradise Hunter</h2>
-    <p>Un cacciatore di misteri e avventure si muove tra paradisi tropicali alla ricerca di verità nascoste. Esplorazione, enigmi e azione in un mondo mozzafiato.</p>
+    <section>
+      <h2>Urban Shadow</h2>
+      <p>Un vigilante con poteri straordinari combatte il crimine in una città dinamica. Azione acrobatica e open‑world ricco di dettagli.</p>
+    </section>
+
+    <section>
+      <h2>Paradise Hunter</h2>
+      <p>Un cacciatore di misteri esplora isolette tropicali, risolvendo enigmi e affrontando pericoli in un mondo mozzafiato.</p>
+    </section>
   </main>
 
   <footer>
     © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
-<script>
-  function toggleLanguageMenu() {
-    document.getElementById("language-menu").classList.toggle("hidden");
-  }
-</script>
-...
-<script>
-  function switchLanguage() {
-    const currentPage = window.location.pathname;
-    if (currentPage.includes("-en")) {
-      window.location.href = currentPage.replace("-en", "");
-    } else {
-      const parts = currentPage.split("/");
-      const fileName = parts.pop();
-      const newFileName = fileName.replace(".html", "-en.html");
-      parts.push(newFileName);
-      window.location.href = parts.join("/");
-    }
-  }
-</script>
-</body>
-</html>
+
+  <script>
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
