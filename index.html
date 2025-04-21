@@ -7,42 +7,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Logo -->
+  <img src="logo.png" alt="Cameddagames Logo" class="logo">
+
+  <!-- Language switcher -->
   <div id="language-switcher">
-  <button id="gear-button" class="gear-button">⚙️</button>
-  <div id="language-menu" class="language-menu hidden">
-    <a href="index.html">Italiano 🇮🇹</a>
-    <a href="index-en.html">English 🇬🇧</a>
+    <button id="gear-button" class="gear-button">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="index.html">Italiano 🇮🇹</a>
+      <a href="index-en.html">English 🇬🇧</a>
+    </div>
   </div>
-</div>
+
+  <!-- Header e navigazione -->
   <header>
-    <img src="logo.png" alt="Logo Cameddagames" class="logo">
     <nav>
-      <a href="index.html" class="home-link">Home</a>
-      <a href="giochi.html" class="games-link">I miei giochi</a>
-      <a href="chi-sono.html" class="about-link">Chi sono</a>
-      <a href="novita.html" class="news-link">Novità</a>
-      <a href="contatti.html" class="contact-link">Contattami</a>
+      <a href="index.html">Home</a>
+      <a href="giochi.html">I miei giochi</a>
+      <a href="novita.html">Novità</a>
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="contatti.html">Contattami</a>
     </nav>
   </header>
 
+  <!-- Contenuto principale -->
   <main>
-    <h1 id="main-title">Benvenuto su Cameddagames!</h1>
-    <p id="main-description">Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
+    <h1>Benvenuto su Cameddagames!</h1>
+    <p>Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p id="footer-text">© 2025 Cameddagames – Tutti i diritti riservati</p>
+    © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
-  <script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const gearButton = document.getElementById('gear-button');
-    const languageMenu = document.getElementById('language-menu');
 
-    gearButton.addEventListener('click', () => {
-      languageMenu.classList.toggle('hidden');
+  <!-- Script per il language‑switcher -->
+  <script>
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
     });
-  });
-</script>
+  </script>
 </body>
 </html>
