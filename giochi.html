@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>I miei giochi – Cameddagames</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -15,6 +15,15 @@
     <div id="language-menu" class="language-menu hidden">
       <a href="index.html">Italiano 🇮🇹</a>
       <a href="index-en.html">English 🇬🇧</a>
+    </div>
+  </div>
+
+  <div id="more-switcher">
+    <button id="more-button" class="gear-button">⋮</button>
+    <div id="more-menu" class="language-menu hidden">
+      <a href="#" id="show-news">Mostra News</a>
+      <a href="#">Opzione 2</a>
+      <a href="#">Opzione 3</a>
     </div>
   </div>
 
@@ -30,31 +39,33 @@
 
   <main>
     <h1>I miei giochi</h1>
-
     <section>
       <h2>La vita di un ladro magnifico</h2>
       <p>Un'avventura ispirata a Lupin, con pianificazione di colpi geniali, ambientazioni suggestive e gameplay realistico.</p>
     </section>
-
     <section>
       <h2>Urban Shadow</h2>
       <p>Un vigilante con poteri straordinari combatte il crimine in una città dinamica. Azione acrobatica e open‑world ricco di dettagli.</p>
     </section>
-
     <section>
       <h2>Paradise Hunter</h2>
       <p>Un cacciatore di misteri esplora isolette tropicali, risolvendo enigmi e affrontando pericoli in un mondo mozzafiato.</p>
     </section>
   </main>
 
+  <section id="gaming-news" class="hidden">
+    <h2>Ultime News Videoludiche</h2>
+    <ul id="news-list"><li>Caricamento notizie…</li></ul>
+  </section>
+
   <footer>
     © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
 
   <script>
-    document.getElementById('gear-button').addEventListener('click', () => {
-      document.getElementById('language-menu').classList.toggle('hidden');
-    });
+    document.getElementById('gear-button').addEventListener('click', ()=>{document.getElementById('language-menu').classList.toggle('hidden');});
+    document.getElementById('more-button').addEventListener('click', ()=>{document.getElementById('more-menu').classList.toggle('hidden');});
+    document.getElementById('show-news').addEventListener('click', e=>{e.preventDefault();const news=document.getElementById('gaming-news');news.classList.toggle('hidden');if(!news.dataset.loaded){document.getElementById('news-list').innerHTML=`<li><a href="https://www.ign.com/articles/latest" target="_blank">Le ultime da IGN</a></li><li><a href="https://www.eurogamer.it/" target="_blank">Articoli da Eurogamer</a></li><li><a href="https://www.gamefactor.com/" target="_blank">News da GameFactor</a></li>`;news.dataset.loaded="true";}document.getElementById('more-menu').classList.add('hidden');});
   </script>
 </body>
 </html>
