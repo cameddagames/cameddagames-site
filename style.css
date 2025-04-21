@@ -1,4 +1,29 @@
-/* 🔧 Posizionamento della rotellina */
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo pagina */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Logo ridotto e fisso */
+.logo {
+  width: 120px;      /* regola qui la larghezza */
+  height: auto;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Language switcher */
 #language-switcher {
   position: fixed;
   top: 20px;
@@ -13,39 +38,71 @@
   cursor: pointer;
 }
 
-/* 📜 Menu della lingua */
 .language-menu {
   display: flex;
   flex-direction: column;
-  background-color: #f3f3f3;
+  background-color: #fff;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 8px;
   position: absolute;
   top: 40px;
   right: 0;
-  border-radius: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .language-menu a {
   text-decoration: none;
   color: #333;
-  padding: 5px 0;
+  padding: 6px 0;
 }
 
 .language-menu a:hover {
-  background-color: #ddd;
+  background-color: #eee;
   border-radius: 4px;
 }
 
-/* 👻 Classe per nascondere il menu */
 .hidden {
   display: none;
 }
-.logo {
-  width: 120px;        /* riduce la larghezza */
-  height: auto;        /* mantiene le proporzioni */
-  position: fixed;     /* lo fissa in alto a sinistra */
-  top: 20px;
-  left: 20px;
-  z-index: 1000;       /* così non si nasconde dietro altri elementi */
+
+/* Header e nav */
+header {
+  margin-top: 80px; /* spazio per logo */
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007aff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main & Footer */
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f5f5f5;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
 }
