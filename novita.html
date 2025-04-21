@@ -2,39 +2,45 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Novità – Cameddagames</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="language-switcher">
-  <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
-  <div id="language-menu" class="language-menu hidden">
-    <a href="index.html">Italiano</a>
-    <a href="index-en.html">English</a>
+
+  <img src="logo.png" alt="Cameddagames Logo" class="logo">
+
+  <div id="language-switcher">
+    <button id="gear-button" class="gear-button">⚙️</button>
+    <div id="language-menu" class="language-menu hidden">
+      <a href="index.html">Italiano 🇮🇹</a>
+      <a href="index-en.html">English 🇬🇧</a>
+    </div>
   </div>
-</div>
-<header>
-    <img src="logo.png" alt="Logo Cameddagames" class="logo">
+
+  <header>
     <nav>
       <a href="index.html">Home</a>
       <a href="giochi.html">I miei giochi</a>
-      <a href="chi-sono.html">Chi sono</a>
       <a href="novita.html">Novità</a>
+      <a href="chi-sono.html">Chi sono</a>
       <a href="contatti.html">Contattami</a>
     </nav>
   </header>
-<main>
+
+  <main>
     <h1>Novità</h1>
-    <p>Presto in arrivo nuovi concept e idee originali!  
-    Seguimi per scoprire i prossimi titoli in sviluppo.</p>
+    <p>Qui troverai aggiornamenti sui miei progetti, annunci di nuove idee e migliorie al sito.</p>
   </main>
-<footer>
+
+  <footer>
     © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
-<script>
-  function toggleLanguageMenu() {
-    document.getElementById("language-menu").classList.toggle("hidden");
-  }
-</script>
+
+  <script>
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
