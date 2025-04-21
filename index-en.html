@@ -7,46 +7,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Icona della rotellina per cambiare lingua -->
-  <div class="language-switcher">
-    <button onclick="toggleLanguageMenu()" class="gear-button">⚙️</button>
+
+  <!-- Logo -->
+  <img src="logo.png" alt="Cameddagames Logo" class="logo">
+
+  <!-- Language switcher -->
+  <div id="language-switcher">
+    <button id="gear-button" class="gear-button">⚙️</button>
     <div id="language-menu" class="language-menu hidden">
-      <a href="javascript:void(0);" onclick="changeLanguage('it')">Italiano</a>
-      <a href="javascript:void(0);" onclick="changeLanguage('en')">English</a>
+      <a href="index.html">Italiano 🇮🇹</a>
+      <a href="index-en.html">English 🇬🇧</a>
     </div>
   </div>
 
+  <!-- Header & navigation -->
   <header>
-    <img src="logo.png" alt="Logo Cameddagames" class="logo">
     <nav>
-      <a href="index-en.html" class="home-link">Home</a>
-      <a href="giochi-en.html" class="games-link">My Games</a>
-      <a href="chi-sono-en.html" class="about-link">About Me</a>
-      <a href="novita-en.html" class="news-link">News</a>
-      <a href="contatti-en.html" class="contact-link">Contact Me</a>
+      <a href="index-en.html">Home</a>
+      <a href="giochi-en.html">My Games</a>
+      <a href="novita-en.html">News</a>
+      <a href="chi-sono-en.html">About Me</a>
+      <a href="contatti-en.html">Contact</a>
     </nav>
   </header>
 
+  <!-- Main content -->
   <main>
-    <h1 id="main-title">Welcome to Cameddagames!</h1>
-    <p id="main-description">Discover my original video games, upcoming news, and who is behind these amazing ideas.</p>
+    <h1>Welcome to Cameddagames!</h1>
+    <p>Discover original and exciting video game concepts created by Niccolò Camedda.</p>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p id="footer-text">© 2025 Cameddagames – All rights reserved</p>
+    © 2025 Cameddagames – All rights reserved
   </footer>
 
-  <function toggleLanguageMenu() {
-  document.getElementById("language-menu").classList.toggle("hidden");
-}
-
-function changeLanguage(lang) {
-  if (lang === 'it') {
-    window.location.href = "index.html"; // Reindirizza alla versione italiana
-  } else if (lang === 'en') {
-    window.location.href = "index-en.html"; // Reindirizza alla versione inglese
-  }
-}
-  <script src="script.js"></script>
+  <!-- Script for language‑switcher -->
+  <script>
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
