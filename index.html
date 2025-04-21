@@ -35,18 +35,16 @@
   <footer>
     <p id="footer-text">© 2025 Cameddagames – Tutti i diritti riservati</p>
   </footer>
+  <script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gearButton = document.getElementById('gear-button');
+    const languageMenu = document.getElementById('language-menu');
 
-  <!-function toggleLanguageMenu() {
-  document.getElementById("language-menu").classList.toggle("hidden");
-}
-
-function changeLanguage(lang) {
-  if (lang === 'it') {
-    window.location.href = "index.html"; // Reindirizza alla versione italiana
-  } else if (lang === 'en') {
-    window.location.href = "index-en.html"; // Reindirizza alla versione inglese
-  }
-}
-  <script src="script.js"></script>
+    gearButton.addEventListener('click', () => {
+      languageMenu.classList.toggle('hidden');
+    });
+  });
+</script>
 </body>
 </html>
