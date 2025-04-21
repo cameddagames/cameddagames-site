@@ -41,11 +41,11 @@
 .hidden {
   display: none;
 }
-
-/* 🖼️ Stile per il logo */
 .logo {
-  max-width: 200px; /* Puoi cambiare questo valore per ingrandirlo o rimpicciolirlo */
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 120px;        /* riduce la larghezza */
+  height: auto;        /* mantiene le proporzioni */
+  position: fixed;     /* lo fissa in alto a sinistra */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;       /* così non si nasconde dietro altri elementi */
 }
