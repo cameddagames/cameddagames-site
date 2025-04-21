@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cameddagames</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -20,7 +20,17 @@
     </div>
   </div>
 
-  <!-- Header e navigazione -->
+  <!-- More‑menu -->
+  <div id="more-switcher">
+    <button id="more-button" class="gear-button">⋮</button>
+    <div id="more-menu" class="language-menu hidden">
+      <a href="#" id="show-news">Mostra News</a>
+      <a href="#">Opzione 2</a>
+      <a href="#">Opzione 3</a>
+    </div>
+  </div>
+
+  <!-- Header & nav -->
   <header>
     <nav>
       <a href="index.html">Home</a>
@@ -31,21 +41,49 @@
     </nav>
   </header>
 
-  <!-- Contenuto principale -->
+  <!-- Main -->
   <main>
     <h1>Benvenuto su Cameddagames!</h1>
     <p>Scopri i miei videogiochi originali, le novità in arrivo e chi c’è dietro queste idee straordinarie.</p>
   </main>
+
+  <!-- Gaming News -->
+  <section id="gaming-news" class="hidden">
+    <h2>Ultime News Videoludiche</h2>
+    <ul id="news-list">
+      <li>Caricamento notizie…</li>
+    </ul>
+  </section>
 
   <!-- Footer -->
   <footer>
     © 2025 Cameddagames – Tutti i diritti riservati
   </footer>
 
-  <!-- Script per il language‑switcher -->
+  <!-- Script -->
   <script>
-    document.getElementById('gear-button').addEventListener('click', () => {
+    // language‑switcher
+    document.getElementById('gear-button').addEventListener('click', ()=>{
       document.getElementById('language-menu').classList.toggle('hidden');
+    });
+    // more‑menu
+    document.getElementById('more-button').addEventListener('click', ()=>{
+      document.getElementById('more-menu').classList.toggle('hidden');
+    });
+    // show news
+    document.getElementById('show-news').addEventListener('click', e=>{
+      e.preventDefault();
+      const news = document.getElementById('gaming-news');
+      news.classList.toggle('hidden');
+      if(!news.dataset.loaded){
+        document.getElementById('news-list').innerHTML = `
+          <li><a href="https://www.ign.com/articles/latest" target="_blank">Le ultime da IGN</a></li>
+          <li><a href="https://www.eurogamer.it/" target="_blank">Articoli da Eurogamer</a></li>
+          <li><a href="https://www.gamefactor.com/" target="_blank">News da GameFactor</a></li>
+        `;
+        news.dataset.loaded = "true";
+      }
+      document.getElementById('more-menu').classList.add('hidden');
     });
   </script>
 </body>
