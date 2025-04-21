@@ -1,49 +1,5 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-  color: #222;
-}
-
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo {
-  height: 50px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #00bcd4;
-}
-
-main {
-  padding: 2rem;
-  text-align: center;
-}
-
-footer {
-  background-color: #f1f1f1;
-  color: #555;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-
-.language-switcher {
+/* 🔧 Posizionamento della rotellina */
+#language-switcher {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -57,23 +13,23 @@ footer {
   cursor: pointer;
 }
 
+/* 📜 Menu della lingua */
 .language-menu {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
+  display: flex;
+  flex-direction: column;
   background-color: #f3f3f3;
   border: 1px solid #ccc;
   padding: 10px;
+  position: absolute;
+  top: 40px;
+  right: 0;
   border-radius: 8px;
-  z-index: 1000;
 }
 
 .language-menu a {
   text-decoration: none;
   color: #333;
   padding: 5px 0;
-  display: block;
 }
 
 .language-menu a:hover {
@@ -81,6 +37,15 @@ footer {
   border-radius: 4px;
 }
 
+/* 👻 Classe per nascondere il menu */
 .hidden {
   display: none;
+}
+
+/* 🖼️ Stile per il logo */
+.logo {
+  max-width: 200px; /* Puoi cambiare questo valore per ingrandirlo o rimpicciolirlo */
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
