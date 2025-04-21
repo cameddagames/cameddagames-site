@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>News – Cameddagames</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-  <a href="index-en.html">Home</a>
-  <a href="giochi-en.html">My Games</a>
-  <a href="novita-en.html">News</a>
-  <a href="chi-sono-en.html">About Me</a>
-  <a href="contatti-en.html">Contact</a>
-</nav>
 
+  <!-- Logo -->
+  <img src="logo.png" alt="Cameddagames Logo" class="logo">
+
+  <!-- Language switcher -->
   <div id="language-switcher">
-    <button class="gear-button" onclick="toggleLanguageMenu()">⚙️</button>
+    <button id="gear-button" class="gear-button">⚙️</button>
     <div id="language-menu" class="language-menu hidden">
-      <a href="novita.html">🇮🇹 Italiano</a>
-      <a href="novita-en.html">🇬🇧 English</a>
+      <a href="novita.html">Italiano 🇮🇹</a>
+      <a href="novita-en.html">English 🇬🇧</a>
     </div>
   </div>
 
-  <h1>Latest News</h1>
-  <p>Welcome to the Cameddagames news section. Here you’ll find updates on future projects, announcements and more!</p>
+  <!-- Header & navigation -->
+  <header>
+    <nav>
+      <a href="index-en.html">Home</a>
+      <a href="giochi-en.html">My Games</a>
+      <a href="novita-en.html">News</a>
+      <a href="chi-sono-en.html">About Me</a>
+      <a href="contatti-en.html">Contact</a>
+    </nav>
+  </header>
 
+  <!-- Main content -->
+  <main>
+    <h1>Latest News</h1>
+    <p>Welcome to the Cameddagames news section. Here you’ll find updates on upcoming projects, announcements, and more!</p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Cameddagames – All rights reserved
+  </footer>
+
+  <!-- Script for language‑switcher -->
   <script>
-    function toggleLanguageMenu() {
-      document.getElementById("language-menu").classList.toggle("hidden");
-    }
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
   </script>
 </body>
 </html>
-
