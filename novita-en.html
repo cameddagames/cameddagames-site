@@ -13,17 +13,17 @@
   <div id="language-switcher">
     <button id="gear-button" class="gear-button">⚙️</button>
     <div id="language-menu" class="language-menu hidden">
-      <a href="novita-en.html">English 🇬🇧</a>
-      <a href="novita.html">Italiano 🇮🇹</a>
+      <a href="index-en.html">English 🇬🇧</a>
+      <a href="index.html">Italiano 🇮🇹</a>
     </div>
   </div>
 
   <div id="more-switcher">
     <button id="more-button" class="gear-button">⋮</button>
     <div id="more-menu" class="language-menu hidden">
-      <a href="#" id="show-news">Show News</a>
-      <a href="#">Option 2</a>
-      <a href="#">Option 3</a>
+      <a href="#" id="show-news">Latest News</a>
+      <a href="#" id="show-upcoming">Upcoming Games</a>
+      <a href="#" id="show-challenge">Monthly Challenge</a>
     </div>
   </div>
 
@@ -39,22 +39,74 @@
 
   <main>
     <h1>Latest News</h1>
-    <p>Welcome to the Cameddagames news section. Here you’ll find updates on upcoming projects, announcements, and more!</p>
+    <p>Here you’ll find the hottest updates, upcoming titles and this month’s challenge!</p>
   </main>
 
+  <!-- Latest Gaming News -->
   <section id="gaming-news" class="hidden">
     <h2>Latest Gaming News</h2>
-    <ul id="news-list"><li>Loading news…</li></ul>
+    <ul id="news-list">
+      <li>Loading news…</li>
+    </ul>
+  </section>
+
+  <!-- Upcoming Games -->
+  <section id="upcoming-games" class="hidden">
+    <h2>Upcoming Games</h2>
+    <ul>
+      <li>Project X: exclusive preview in September</li>
+      <li>Urban Shadow II: release date revealed</li>
+      <li>CyberHeist: gameplay trailer available</li>
+    </ul>
+  </section>
+
+  <!-- Monthly Challenge -->
+  <section id="monthly-challenge" class="hidden">
+    <h2>Monthly Challenge</h2>
+    <p>Decipher the secret code hidden in this page and send it to cameddagames@gmail.com to earn a virtual badge!</p>
   </section>
 
   <footer>
-    © 2025 Cameddagames – All rights reserved
+    © 2025 Cameddagames – All rights reserved
   </footer>
 
   <script>
-    document.getElementById('gear-button').addEventListener('click', ()=>{document.getElementById('language-menu').classList.toggle('hidden');});
-    document.getElementById('more-button').addEventListener('click', ()=>{document.getElementById('more-menu').classList.toggle('hidden');});
-    document.getElementById('show-news').addEventListener('click', e=>{e.preventDefault();const n=document.getElementById('gaming-news');n.classList.toggle('hidden');if(!n.dataset.loaded){document.getElementById('news-list').innerHTML=`<li><a href="https://www.ign.com/articles/latest" target="_blank">Latest from IGN</a></li><li><a href="https://www.eurogamer.net/" target="_blank">Stories from Eurogamer</a></li><li><a href="https://www.gamefactor.com/" target="_blank">Updates on GameFactor</a></li>`;n.dataset.loaded="true";}document.getElementById('more-menu').classList.add('hidden');});
+    // toggle language menu
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
+    // toggle more menu
+    document.getElementById('more-button').addEventListener('click', () => {
+      document.getElementById('more-menu').classList.toggle('hidden');
+    });
+    // show sections
+    const hideAll = () => {
+      document.getElementById('gaming-news').classList.add('hidden');
+      document.getElementById('upcoming-games').classList.add('hidden');
+      document.getElementById('monthly-challenge').classList.add('hidden');
+    };
+    document.getElementById('show-news').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('gaming-news').classList.remove('hidden');
+      if (!document.getElementById('gaming-news').dataset.loaded) {
+        document.getElementById('news-list').innerHTML = `
+          <li><a href="https://www.ign.com/articles/latest" target="_blank">Latest from IGN</a></li>
+          <li><a href="https://www.eurogamer.net/" target="_blank">Stories from Eurogamer</a></li>
+          <li><a href="https://www.gamefactor.com/" target="_blank">Updates on GameFactor</a></li>`;
+        document.getElementById('gaming-news').dataset.loaded = "true";
+      }
+      document.getElementById('more-menu').classList.add('hidden');
+    });
+    document.getElementById('show-upcoming').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('upcoming-games').classList.remove('hidden');
+      document.getElementById('more-menu').classList.add('hidden');
+    });
+    document.getElementById('show-challenge').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('monthly-challenge').classList.remove('hidden');
+      document.getElementById('more-menu').classList.add('hidden');
+    });
   </script>
 </body>
 </html>
