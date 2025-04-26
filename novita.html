@@ -21,9 +21,9 @@
   <div id="more-switcher">
     <button id="more-button" class="gear-button">⋮</button>
     <div id="more-menu" class="language-menu hidden">
-      <a href="#" id="show-news">Mostra News</a>
-      <a href="#">Opzione 2</a>
-      <a href="#">Opzione 3</a>
+      <a href="#" id="show-news">Ultime News</a>
+      <a href="#" id="show-upcoming">Prossimi Giochi</a>
+      <a href="#" id="show-challenge">Sfida del Mese</a>
     </div>
   </div>
 
@@ -39,12 +39,31 @@
 
   <main>
     <h1>Novità</h1>
-    <p>Qui troverai aggiornamenti sui miei progetti, annunci di nuove idee e migliorie al sito.</p>
+    <p>Qui trovi gli aggiornamenti più importanti, i prossimi titoli in arrivo e la sfida del mese!</p>
   </main>
 
+  <!-- Sezione Ultime News -->
   <section id="gaming-news" class="hidden">
     <h2>Ultime News Videoludiche</h2>
-    <ul id="news-list"><li>Caricamento notizie…</li></ul>
+    <ul id="news-list">
+      <li>Caricamento notizie…</li>
+    </ul>
+  </section>
+
+  <!-- Sezione Prossimi Giochi -->
+  <section id="upcoming-games" class="hidden">
+    <h2>Prossimi Giochi in Uscita</h2>
+    <ul>
+      <li>Project X: anteprima esclusiva a settembre</li>
+      <li>Urban Shadow II: svelata data di lancio</li>
+      <li>CyberHeist: gameplay trailer disponibile</li>
+    </ul>
+  </section>
+
+  <!-- Sezione Sfida del Mese -->
+  <section id="monthly-challenge" class="hidden">
+    <h2>Sfida del Mese</h2>
+    <p>Risolvi l’enigma segreto: <strong>trova la password nascosta</strong> nella pagina e inviala a cameddagames@gmail.com per un badge virtuale!</p>
   </section>
 
   <footer>
@@ -52,9 +71,42 @@
   </footer>
 
   <script>
-    document.getElementById('gear-button').addEventListener('click', ()=>{document.getElementById('language-menu').classList.toggle('hidden');});
-    document.getElementById('more-button').addEventListener('click', ()=>{document.getElementById('more-menu').classList.toggle('hidden');});
-    document.getElementById('show-news').addEventListener('click', e=>{e.preventDefault();const n=document.getElementById('gaming-news');n.classList.toggle('hidden');if(!n.dataset.loaded){document.getElementById('news-list').innerHTML=`<li><a href="https://www.ign.com/articles/latest" target="_blank">Le ultime da IGN</a></li><li><a href="https://www.eurogamer.it/" target="_blank">Articoli da Eurogamer</a></li><li><a href="https://www.gamefactor.com/" target="_blank">News da GameFactor</a></li>`;n.dataset.loaded="true";}document.getElementById('more-menu').classList.add('hidden');});
+    // toggle language menu
+    document.getElementById('gear-button').addEventListener('click', () => {
+      document.getElementById('language-menu').classList.toggle('hidden');
+    });
+    // toggle more menu
+    document.getElementById('more-button').addEventListener('click', () => {
+      document.getElementById('more-menu').classList.toggle('hidden');
+    });
+    // show sections
+    const hideAll = () => {
+      document.getElementById('gaming-news').classList.add('hidden');
+      document.getElementById('upcoming-games').classList.add('hidden');
+      document.getElementById('monthly-challenge').classList.add('hidden');
+    };
+    document.getElementById('show-news').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('gaming-news').classList.remove('hidden');
+      if (!document.getElementById('gaming-news').dataset.loaded) {
+        document.getElementById('news-list').innerHTML = `
+          <li><a href="https://www.ign.com/articles/latest" target="_blank">Le ultime da IGN</a></li>
+          <li><a href="https://www.eurogamer.it/" target="_blank">Articoli da Eurogamer</a></li>
+          <li><a href="https://www.gamefactor.com/" target="_blank">News da GameFactor</a></li>`;
+        document.getElementById('gaming-news').dataset.loaded = "true";
+      }
+      document.getElementById('more-menu').classList.add('hidden');
+    });
+    document.getElementById('show-upcoming').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('upcoming-games').classList.remove('hidden');
+      document.getElementById('more-menu').classList.add('hidden');
+    });
+    document.getElementById('show-challenge').addEventListener('click', e => {
+      e.preventDefault(); hideAll();
+      document.getElementById('monthly-challenge').classList.remove('hidden');
+      document.getElementById('more-menu').classList.add('hidden');
+    });
   </script>
 </body>
 </html>
